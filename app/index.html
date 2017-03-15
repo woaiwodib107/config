@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>CityVis</title>
+</head>
+<body id="body">
+<!--导航-->
+<div id="menu">
+    <img id="menuicon" hide="false" src="./img/menu.png" height="80%">
+</div>
+<div id="wrapper" class="toggled">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    CityVis
+                </a>
+            </li>
+            <li id="simularSites">
+                <a href="#"> <span>Convex</span> </a>
+                <ul>
+                    <li check="false">
+                        <a href="#"> <span>10</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                    <li check="false">
+                        <a href="#"> <span>30</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                    <li check="false">
+                        <a href="#"> <span>50</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                </ul>
+            </li>
+            <li id="convex">
+                <a href="#"><span>Simular Sites</span></a>
+                <ul>
+                    <li check="false">
+                        <a href="#"> <span>10</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                    <li check="false">
+                        <a href="#"> <span>30</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                    <li check="false">
+                        <a href="#"> <span>50</span> <img class="check" src="./img/checked.png" height="20px"
+                                                          style="display:none;"> </a>
+                    </li>
+                </ul>
+            </li>
+            <li id="trajectory" checkd="true">
+                <a href="#"><span>Trajectory</span> </a>
+                <ul>
+                    <li class="op" check="false">
+                        <a href="#"> <span>flow</span> <img class="check" src="./img/checked.png" height="20px"
+                                                            style="display:none;"> </a>
+                    </li>
+                    <li class="op" check="false">
+                        <a href="#"> <span>inflow</span> <img class="check" src="./img/checked.png" height="20px"
+                                                              style="display:none;"> </a>
+                    </li>
+                    <li class="op" check="false">
+                        <a href="#"> <span>outflow</span> <img class="check" src="./img/checked.png" height="20px"
+                                                               style="display:none;"> </a>
+                    </li>
+                    <li class="duration"><a href="#"><span>Duration:</span><input id="duration" type="text"
+                                                                                  name="duration"
+                                                                                  placeholder="0"></a>
+                    </li>
+                </ul>
+            </li>
+            <li id="station">
+                <a href="#"><span>Station</span> </a>
+                <ul>
+                    <li check="false">
+                        <a href="#"> <span>Vonoroi</span> <img class="check" src="./img/checked.png" height="20px"
+                                                               style="display:none;"> </a>
+                </ul>
+                <!--Duration:<input class="duration" type="text" name="duration" value="0">-->
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <!-- /#page-content-wrapper -->
+
+</div>
+
+<div id='map'>
+    <svg id="mapSvg">
+        <g class="hull"></g>
+        <g class="primitives"></g>
+        <g class="links"></g>
+        <g class="trajectories"></g>
+        <g class="sites"></g>
+        <g class="voronoi"></g>
+        <g class="anis-circle"></g>
+        <g class="anis-heatmap"></g>
+        <g class="anis-voronoi"></g>
+    </svg>
+    <div id="mapCanvas" height="100%" width="100%"></div>
+    &lt;!&ndash;<div id="webCanvas" height="100%" width="100%"></div>&ndash;&gt;
+
+</div>
+<!--<div id="bottomViewTitle" scale="false" hide="false">-->
+<!--<p id="bottomViewTitleName">Statistical View</p>-->
+<!--</div>-->
+
+<div id="bottomView">
+    <div id="bottomViewTab">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#flowView" data-toggle="tab">
+                    Line Chart
+                </a>
+            </li>
+            <li><a href="#newView" data-toggle="tab">Timeline View</a></li>
+        </ul>
+    </div>
+    <div id="tab-content" class="tab-content">
+        <div id="newView" class="tab-pane fade">
+            <svg id="newSvg">
+            </svg>
+        </div>
+        <div id="flowView" class="tab-pane fade in active"></div>
+    </div>
+</div>
+
+<div id="coordViewTitle" scale="false" hide="false">
+    <div id="topViewTab">
+        <ul id="topTab" class="nav nav-tabs">
+            <li class="active "><a href="#coordView" data-toggle="tab"><p id="coordViewTitleName">CoordView</p></a></li>
+            <li ><a href="#vec2DView" data-toggle="tab"><p id="vec2DViewTitleName">Vec2DView</p></a></li>
+        </ul>
+    </div>
+
+    <div id="coordViewIcon">
+        <img id="coordViewSlideIcon" src="./img/plus.png" height="80%">
+        <img id="coordViewScaleIcon" src="./img/maximum.png" height="80%">
+    </div>
+</div>
+<div id="topView" class="tab-content">
+    <div id="coordView" class="coordView tab-pane fade in active">
+        <svg id="coordSvg" class="coordSvg"></svg>
+    </div>
+    <div id="vec2DView" class="tab-pane fade ">
+        <svg id="vec2DSvg" class="vec2DSvg"></svg>
+    </div>
+</div>
+
+
+<script src="./bundle.js"></script>
+</body>
+</html>

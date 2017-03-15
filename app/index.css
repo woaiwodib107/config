@@ -1,0 +1,259 @@
+#body {
+    /*width: 1920px;*/
+    /*height: 1080px;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    margin: 0px;
+}
+
+#logo {
+    background: url(./img/logo_kite.png)
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+
+}
+
+#mapSvg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+#mapCanvas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#searchForm {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    top: 20px;
+    left: 50px
+}
+
+#menu {
+    position:fixed;
+    top:0rem;
+    float:right;
+    height:5rem;
+    right:0rem;
+    width:5rem;
+    z-index:3;
+    opacity: 1;
+}
+
+#sidebar-content {
+    background-color: white;
+    border: 2px groove black;
+    position: absolute;
+    right:0;
+    bottom:0;
+    height:95%;
+    width:100%;
+}
+
+#sidebar-title {
+    font-size: 2rem;
+    background-color: white;
+    border: 2px groove green;
+    position: absolute;
+    right: 0;
+    top: 0rem;
+    height: 5%;
+    width: 100%;
+}
+
+#bottomView {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+    height: 40rem;
+    width: 100%;
+    z-index: 2;
+    border-top: 2px solid green;
+}
+#tab-content{
+    height:80%;
+    width:100%;
+    overflow: scroll;
+}
+
+#flowView {
+    width: 100%;
+    height: 100%;
+}
+
+#bottomViewTitle {
+    position: absolute;
+    background-color: whitesmoke;
+    left: 0;
+    bottom: 20rem;
+    height: 3rem;
+    width: 100%;
+    border-top: 2px solid green;
+    border-radius: 3px;
+    display: block;
+}
+
+#bottomSvg {
+    width: 100%;
+    height: 100%;
+}
+
+#bottomViewTitleName {
+    font-size: 2rem;
+}
+
+#method {
+    background-color: #f8f8f8;
+    border-right: 2px solid #212121;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+}
+
+#data {
+    background-color: #f8f8f8;
+    border-right: 2px solid #212121;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+}
+
+#time {
+    background-color: #f8f8f8;
+    border-right: 2px solid #212121;
+    position: absolute;
+    left: 0;
+    top: 26rem;
+    height: 15rem;
+    width: 20rem;
+    display: block;
+}
+
+#word2vectime {
+    background-color: #f8f8f8;
+    border-right: 2px solid #212121;
+    position: absolute;
+    left: 0;
+    top: 26rem;
+    height: 15rem;
+    width: 20rem;
+    display: block;
+}
+
+#sidebar-button {
+    position: absolute;
+    bottom: 5rem;
+    width: 80%;
+    vertical-align: middle;
+}
+
+.querynode-value {
+    width: 20rem;
+    height: 2rem;
+    display: inline-block;
+    position: relative;
+}
+
+.querynode-selector {
+    position: absolute;
+    font-size: 1rem;
+    left: 8rem;
+    top: 0.4rem;
+    height: 2rem;
+    width: 10rem;
+    border: 0.05rem solid #5c688a;
+    background: #ffffff;
+    padding-left: 0.4rem;
+    color: black;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.querynode-selector2 {
+    font-size: 1rem;
+    left: 8rem;
+    top: 0.4rem;
+    height: 2rem;
+    width: 10rem;
+    border: 0.05rem solid #5c688a;
+    background: #ffffff;
+    padding-left: 0.4rem;
+    color: black;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+.query-label {
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    width: 8rem;
+    line-height: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.query-label2 {
+    font-size: 1rem;
+    left: 0;
+    top: 0.4rem;
+    width: 8rem;
+    line-height: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.title {
+    height: 1.5rem;
+    border-bottom: 1px solid #212121;
+    padding: 0 0 0 0.5rem;
+    line-height: 1.5rem;
+}
+
+.button {
+    position: absolute;
+    top: 1000px;
+    left: 450px;
+}
+
+#tooltip {
+    background-color: white;
+    padding: 3px 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.navbar {
+    z-index: 3;
+}
+
+#trajectory ul #duration{
+    height: 20px;
+    width: 80px;
+    color:#000000;
+}
