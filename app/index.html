@@ -1,162 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <title>CityVis</title>
+    <script src="jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
+    <title>LJH</title>
 </head>
-<body id="body">
-<!--导航-->
-<div id="menu">
-    <img id="menuicon" hide="false" src="./img/menu.png" height="80%">
-</div>
-<div id="wrapper" class="toggled">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
 
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    CityVis
-                </a>
-            </li>
-            <li id="simularSites">
-                <a href="#"> <span>Convex</span> </a>
-                <ul>
-                    <li check="false">
-                        <a href="#"> <span>10</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                    <li check="false">
-                        <a href="#"> <span>30</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                    <li check="false">
-                        <a href="#"> <span>50</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                </ul>
-            </li>
-            <li id="convex">
-                <a href="#"><span>Simular Sites</span></a>
-                <ul>
-                    <li check="false">
-                        <a href="#"> <span>10</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                    <li check="false">
-                        <a href="#"> <span>30</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                    <li check="false">
-                        <a href="#"> <span>50</span> <img class="check" src="./img/checked.png" height="20px"
-                                                          style="display:none;"> </a>
-                    </li>
-                </ul>
-            </li>
-            <li id="trajectory" checkd="true">
-                <a href="#"><span>Trajectory</span> </a>
-                <ul>
-                    <li class="op" check="false">
-                        <a href="#"> <span>flow</span> <img class="check" src="./img/checked.png" height="20px"
-                                                            style="display:none;"> </a>
-                    </li>
-                    <li class="op" check="false">
-                        <a href="#"> <span>inflow</span> <img class="check" src="./img/checked.png" height="20px"
-                                                              style="display:none;"> </a>
-                    </li>
-                    <li class="op" check="false">
-                        <a href="#"> <span>outflow</span> <img class="check" src="./img/checked.png" height="20px"
-                                                               style="display:none;"> </a>
-                    </li>
-                    <li class="duration"><a href="#"><span>Duration:</span><input id="duration" type="text"
-                                                                                  name="duration"
-                                                                                  placeholder="0"></a>
-                    </li>
-                </ul>
-            </li>
-            <li id="station">
-                <a href="#"><span>Station</span> </a>
-                <ul>
-                    <li check="false">
-                        <a href="#"> <span>Vonoroi</span> <img class="check" src="./img/checked.png" height="20px"
-                                                               style="display:none;"> </a>
-                </ul>
-                <!--Duration:<input class="duration" type="text" name="duration" value="0">-->
-            </li>
-        </ul>
+<body>
+    <div class="ui left vertical inverted labeled icon sidebar menu">
+        <a class="item">
+            <i class="home icon"></i> 主页
+        </a>
+        <a class="item">
+            <i class="block layout icon"></i> 主题
+        </a>
+        <a class="item">
+            <i class="smile icon"></i> 朋友
+        </a>
+        <a class="item">
+            <i class="calendar icon"></i> 历史
+        </a>
+        <a class="item">
+            <i class="mail icon"></i> 消息
+        </a>
+        <a class="item">
+            <i class="chat icon"></i> 讨论
+        </a>
+        <a class="item">
+            <i class="trophy icon"></i> 奖励
+        </a>
+        <a class="item">
+            <i class="shop icon"></i> 商店
+        </a>
+        <a class="item">
+            <i class="settings icon"></i> 设置
+        </a>
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <!-- /#page-content-wrapper -->
-
-</div>
-
-<div id='map'>
-    <svg id="mapSvg">
-        <g class="hull"></g>
-        <g class="primitives"></g>
-        <g class="links"></g>
-        <g class="trajectories"></g>
-        <g class="sites"></g>
-        <g class="voronoi"></g>
-        <g class="anis-circle"></g>
-        <g class="anis-heatmap"></g>
-        <g class="anis-voronoi"></g>
-    </svg>
-    <div id="mapCanvas" height="100%" width="100%"></div>
-    &lt;!&ndash;<div id="webCanvas" height="100%" width="100%"></div>&ndash;&gt;
-
-</div>
-<!--<div id="bottomViewTitle" scale="false" hide="false">-->
-<!--<p id="bottomViewTitleName">Statistical View</p>-->
-<!--</div>-->
-
-<div id="bottomView">
-    <div id="bottomViewTab">
-        <ul id="myTab" class="nav nav-tabs">
-            <li class="active">
-                <a href="#flowView" data-toggle="tab">
-                    Line Chart
-                </a>
-            </li>
-            <li><a href="#newView" data-toggle="tab">Timeline View</a></li>
-        </ul>
-    </div>
-    <div id="tab-content" class="tab-content">
-        <div id="newView" class="tab-pane fade">
-            <svg id="newSvg">
-            </svg>
+    <div class="pusher">
+        <div class="ui black big launch right attached fixed button" style="position: absolute;z-index:100">
+            <i class="content icon" style="margin-left: 9px;margin-right: 0px"></i>
+            <span class="text" style="display:none;">Sidebar</span>
         </div>
-        <div id="flowView" class="tab-pane fade in active"></div>
+        <!-- 这里开始写正常的页面 -->
+        <div class="ui grid padded">
+            <div class="fourteen wide teal column" style="height: 730px">主视图
+            </div>
+            <div class="two wide red column" style="height: 730px">查询吧
+                <div class="ui grid padded">
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="sixteen wide column">
+                            <div class="ui icon input">
+                                <input type="text" placeholder="搜索...">
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui grid padded">
+            <div class="ten wide blue column" style="height: 350px">细节图1</div>
+            <div class="six wide blak green column" style="height: 350px">细节图2</div>
+        </div>
     </div>
-</div>
-
-<div id="coordViewTitle" scale="false" hide="false">
-    <div id="topViewTab">
-        <ul id="topTab" class="nav nav-tabs">
-            <li class="active "><a href="#coordView" data-toggle="tab"><p id="coordViewTitleName">CoordView</p></a></li>
-            <li ><a href="#vec2DView" data-toggle="tab"><p id="vec2DViewTitleName">Vec2DView</p></a></li>
-        </ul>
-    </div>
-
-    <div id="coordViewIcon">
-        <img id="coordViewSlideIcon" src="./img/plus.png" height="80%">
-        <img id="coordViewScaleIcon" src="./img/maximum.png" height="80%">
-    </div>
-</div>
-<div id="topView" class="tab-content">
-    <div id="coordView" class="coordView tab-pane fade in active">
-        <svg id="coordSvg" class="coordSvg"></svg>
-    </div>
-    <div id="vec2DView" class="tab-pane fade ">
-        <svg id="vec2DSvg" class="vec2DSvg"></svg>
-    </div>
-</div>
-
-
-<script src="./bundle.js"></script>
+    <script src="./bundle.js"></script>
 </body>
+
 </html>

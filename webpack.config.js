@@ -21,6 +21,7 @@ module.exports = {
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' }
         ]
     },resolve: {
+        modulesDirectories: ["node_modules", "bower_components"],
         extensions: ['', '.js'],
         alias: {
             staticVar: path.join(__dirname, "app/staticVar.js"),
