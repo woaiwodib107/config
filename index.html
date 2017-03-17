@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/semantic-ui/dist/semantic.min.css">
+    <script src="node_modules/semantic-ui/dist/semantic.min.js"></script>
+    <title>LJH</title>
+</head>
+
+<body>
+    <div class="ui left vertical inverted labeled icon sidebar menu">
+        <a class="item">
+            <i class="home icon"></i> 主页
+        </a>
+        <a class="item">
+            <i class="block layout icon"></i> 主题
+        </a>
+        <a class="item">
+            <i class="smile icon"></i> 朋友
+        </a>
+        <a class="item">
+            <i class="calendar icon"></i> 历史
+        </a>
+        <a class="item">
+            <i class="mail icon"></i> 消息
+        </a>
+        <a class="item">
+            <i class="chat icon"></i> 讨论
+        </a>
+        <a class="item">
+            <i class="trophy icon"></i> 奖励
+        </a>
+        <a class="item">
+            <i class="shop icon"></i> 商店
+        </a>
+        <a class="item">
+            <i class="settings icon"></i> 设置
+        </a>
+    </div>
+    <div class="pusher">
+        <div class="ui black big launch right attached fixed button" style="position: absolute;z-index:100">
+            <i class="content icon" style="margin-left: 9px;margin-right: 0px"></i>
+            <span class="text" style="display:none;">Sidebar</span>
+        </div>
+        <!-- 这里开始写正常的页面 -->
+        <div class="ui grid padded">
+            <div class="fourteen wide teal column" style="height: 730px">主视图
+                <svg id=inice width="100%" height="700px"></svg>
+            </div>
+            <div class="two wide red column" style="height: 730px">查询吧
+                <div class="ui grid padded">
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="three wide column">
+                            <i class="big user icon"></i>
+                        </div>
+                        <div class="ten wide column">
+                            <div class="ui input mini focus">
+                                <input type="text" placeholder="搜索...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="sixteen wide column">
+                            <div class="ui icon input">
+                                <input type="text" placeholder="搜索...">
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui grid padded">
+            <div class="ten wide blue column" style="height: 350px">细节图1</div>
+            <div class="six wide blak green column" style="height: 350px">细节图2</div>
+        </div>
+    </div>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

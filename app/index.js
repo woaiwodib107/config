@@ -4,7 +4,7 @@
 
 import $ from 'jquery'
 import * as d3 from 'd3'
-import {iceInit} from './iceLayout.js'
+import {iceInit} from './js/iceLayout.js'
 import 'semantic-ui/dist/semantic.min.js'
 $(document).ready(function () {
     // 菜单效果

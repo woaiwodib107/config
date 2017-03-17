@@ -5,11 +5,11 @@ var webpack = require('webpack');
 module.exports = {
     entry: {
         js: path.join(appdir, 'index.js'),
-        html: path.join(appdir, 'index.html')
+        html: path.join(__dirname, 'index.html')
     },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'bundle.js'
+        // path: path.resolve(__dirname, 'dist')
     },
     module: {
         loaders: [
@@ -21,19 +21,15 @@ module.exports = {
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' }
         ]
     },resolve: {
-        modulesDirectories: ["node_modules", "bower_components"],
-        extensions: ['', '.js'],
+        // extensions: ['', '.js'],
+        modules: ['node_modules', 'src'],
         alias: {
-            staticVar: path.join(__dirname, "app/staticVar.js"),
-            map: path.join(__dirname, "app/map.js"),
-            indexcss: path.join(__dirname, "app/index.css"),
-            VTKLoader: path.join(__dirname, "app/VTKLoader.js"),
             triangulationRender: path.join(__dirname, "app/triangulationRender.js")
         }
     },
     devtool: 'evil-source-map',
     devServer: {
-         contentBase: path.resolve(__dirname, 'dist'),
+        //  contentBase: path.resolve(__dirname, 'dist'),
         // inline: true,
         // progress: true,
         // stats: { color: true },
