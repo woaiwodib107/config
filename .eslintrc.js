@@ -8,6 +8,6 @@ module.exports = {
     "rules": {
         "indent": ["warn", 4],
         "no-unused-vars": ["warn", { "vars": "all", "args": "after-used" }],
-        "no-trailing-spaces": ["warn", {"skipBlankLines":false}]
+        "no-trailing-spaces": ["0", {"skipBlankLines":ture}]
     }
 };
